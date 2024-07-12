@@ -33,9 +33,9 @@ def browser_management():
 
     yield BR
 
-    attach.add_screenshot(BR)
-    attach.add_logs(BR)
-    attach.add_html(BR)
-    attach.add_video(BR)
+    # attach.add_screenshot(BR)
+    # attach.add_logs(BR)
+    # attach.add_html(BR)
+    # attach.add_video(BR)
 
     browser.quit()
