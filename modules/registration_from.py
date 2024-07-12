@@ -5,7 +5,7 @@ from pathlib import Path
 
 class RegistrationForm:
     def open(self):
-        browser.open('automation-practice-form')  # исправил. С rc7 selene не работало почему то. Сейчас норм (rc2)
+        browser.open('automation-practice-form')
 
     def first_name(self, name):
         browser.element('#firstName').type(name)
@@ -28,8 +28,7 @@ class RegistrationForm:
         browser.element('.react-datepicker__year-select').type('2007')
         browser.element(
             f'.react-datepicker__day--0{16}:not(.react-datepicker__day--outside-month)'
-        ).click()  # одолжил у коллег. Так работает)
-        # browser.element('.react-datepicker__month').element('[aria-label="Choose Saturday, June 16th, 2007"]').click() у меня валится на таймауте, потому что не может найти элемент.
+        ).click()
 
     def subjects(self, sub):
         browser.element('#subjectsInput').type(sub).press_enter()
