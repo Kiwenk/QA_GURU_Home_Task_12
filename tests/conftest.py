@@ -1,6 +1,7 @@
 from selene import browser
 import pytest
 from selenium import webdriver
+from utils import attach
 
 
 
@@ -13,4 +14,10 @@ def browser_management():
     browser.config.window_width = 1200
     browser.config.window_height = 1200
     yield
+
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
+    attach.add_html(browser)
+    attach.add_video(browser)
+
     browser.quit()
