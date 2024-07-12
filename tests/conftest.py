@@ -1,4 +1,4 @@
-from selene import browser
+from selene import browser as brw
 import pytest
 from selenium import webdriver
 from utils import attach
@@ -6,18 +6,13 @@ from selene import Browser, Config
 from selenium.webdriver.chrome.options import Options
 
 
-@pytest.fixture(autouse=True)
-def browser_management():
-    browser.config.base_url = 'https://demoqa.com/'
-    # driver_options = webdriver.ChromeOptions()
-    # driver_options.add_argument('--headless')
-    # browser.config.driver_options = driver_options
-    browser.config.window_width = 1200
-    browser.config.window_height = 1200
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='function', autouse=True)
 def setup_browser(request):
+    brw.config.base_url = 'https://demoqa.com/'
+    brw.config.window_width = 1200
+    brw.config.window_height = 1200
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
