@@ -11,8 +11,6 @@ from selenium.webdriver.chrome.options import Options
 @pytest.fixture(scope='function', autouse=True)
 def setup_browser(request):
     brw.config.base_url = 'https://demoqa.com/'
-    brw.config.window_width = 1200
-    brw.config.window_height = 1200
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
