@@ -15,9 +15,6 @@ def browser_management():
     browser.config.window_width = 1200
     browser.config.window_height = 1200
 
-    yield
-
-    browser.quit()
 
 
 @pytest.fixture(scope='function')
@@ -45,3 +42,5 @@ def setup_browser(request):
     attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
+
+    browser.quit()
