@@ -3,6 +3,7 @@ import allure
 from modules.registration_from import RegistrationForm
 from modules.users import User
 
+
 @allure.story("Пользователь регистриуется на DEMOQA")
 @allure.feature('Регистрация')
 @allure.link('http://demoqa.com/automation-practice-form')
