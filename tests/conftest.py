@@ -2,7 +2,7 @@ import pytest
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config
+
 
 from utils import attach
 
@@ -24,7 +24,11 @@ def setup_browser(request):
         options=options
     )
 
-    browser = Browser(Config(driver=driver))
+    from selene import browser
+
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
+    browser.config.driver = driver
     yield browser
 
     attach.add_screenshot(browser)
