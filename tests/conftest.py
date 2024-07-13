@@ -2,7 +2,7 @@ import pytest
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+from selene import browser
 
 from utils import attach
 
@@ -23,8 +23,6 @@ def setup_browser(request):
         command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options
     )
-
-    from selene import browser
 
     browser.config.window_width = 1920
     browser.config.window_height = 1080
