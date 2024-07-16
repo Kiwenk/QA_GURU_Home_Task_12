@@ -5,7 +5,7 @@ from pathlib import Path
 
 class RegistrationForm:
     def open(self):
-        browser.open('/automation-practice-form')
+        browser.open('automation-practice-form')
 
     def first_name(self, name):
         browser.element('#firstName').type(name)
